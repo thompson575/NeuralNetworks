@@ -552,7 +552,7 @@ NumericMatrix cNodalValues_nn( NumericMatrix X,
     // set the predictors into a
     for(int i = 0; i < nX; i++) v[i] = X(d, i);
     // forward pass
-    a = cforward_nn(v, bias, weight, from, to, nPtr, wPtr, actFun);
+    v = cforward_nn(v, bias, weight, from, to, nPtr, wPtr, actFun);
     // extract the predictions
     for(int i = 0; i < nY; i++) Y(d, i) = v[nX + i];
   }
